@@ -7,17 +7,15 @@ module.exports = async ctx => {
   if (isBot) {
     return ctx.reply(`Sorry I only interact with humans!`)
   }
-
-  setInterval(() => {
-    ctx.reply(`გამარჯობა ${name}!`),
-    1,000});
   
-//   try {
-//     return ctx.reply(`გამარჯობა ${name}!`)
+  try {
+    setInterval(() => {
+        ctx.reply(`გამარჯობა ${name}!`),
+        1,000})
     
-//   } catch (e) {
-//     return ctx.reply(`Error occured`)
-//   }
+  } catch (e) {
+    return ctx.reply(`Error occured`)
+  }
 
 }
 // module.exports = async ctx => {
