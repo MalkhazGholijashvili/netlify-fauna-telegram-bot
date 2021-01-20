@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Control</title>
+</head>
+<body>
+    <form>
+        <input type="text" name='token' id="token" placeholder="your bot token">
+        <input type="text" name="chat_id" id="chat_id" value="myChatId">
+        <input type="text" name="text" id="text" value="hello">
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        $('form').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url:'https://api.telegram.org/bot'+$('#token').val()+'/sendMessage',
+                method:'POST',
+                data:{chat_id:$('#chat_id').val(),text:$('#text').val()},
+                success:function(){
+                    alert('your message has been sent!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

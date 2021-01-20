@@ -8,11 +8,16 @@ module.exports = async ctx => {
     return ctx.reply(`Sorry I only interact with humans!`)
   }
 
-  try {
-    return ctx.reply(`გამარჯობა ${name}!`)
-  } catch (e) {
-    return ctx.reply(`Error occured`)
-  }
+  setInterval(() => {
+    ctx.reply(`გამარჯობა ${name}!`),
+    1,000});
+  
+//   try {
+//     return ctx.reply(`გამარჯობა ${name}!`)
+    
+//   } catch (e) {
+//     return ctx.reply(`Error occured`)
+//   }
 
 }
 // module.exports = async ctx => {
